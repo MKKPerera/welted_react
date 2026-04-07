@@ -35,24 +35,26 @@ export default function Home() {
             : "bg-transparent"
         }`}
       >
-        <img src={Logo} alt="WERLTEC" className="h-10 object-contain" />
+        <img src={Logo} alt="WERLTEC" className="object-contain h-10" />
         <div className="flex gap-6">
-          {["home", "about", "services", "careers", "contact"].map((item) => (
-            <a
-              key={item}
-              href={`#${item}`}
-              className="hover:text-blue-300 capitalize transition"
-            >
-              {item}
-            </a>
-          ))}
+          {["home", "about", "services", "careers", "blog", "contact"].map(
+            (item) => (
+              <a
+                key={item}
+                href={`#${item}`}
+                className="capitalize transition hover:text-blue-300"
+              >
+                {item}
+              </a>
+            ),
+          )}
         </div>
       </nav>
 
       {/* HERO */}
       <section
         id="home"
-        className="h-screen relative flex items-center justify-center"
+        className="relative flex items-center justify-center h-screen"
       >
         {slides.map((img, i) => (
           <div
@@ -67,7 +69,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
 
         <div className="z-10 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
+          <h1 className="mb-4 text-5xl font-bold md:text-6xl">
             Where Technology Meets Business Excellence.
           </h1>
           <p className="mb-6">We develop modern experiences</p>
@@ -78,12 +80,12 @@ export default function Home() {
                 .getElementById("careers")
                 .scrollIntoView({ behavior: "smooth" })
             }
-            className="bg-white/10 backdrop-blur-md text-white px-6 py-2 rounded-full border border-white/30"
+            className="px-6 py-2 text-white border rounded-full bg-white/10 backdrop-blur-md border-white/30"
           >
             View Careers
           </button>
 
-          <div className="flex justify-center mt-6 gap-2">
+          <div className="flex justify-center gap-2 mt-6">
             {slides.map((_, i) => (
               <div
                 key={i}
@@ -100,9 +102,9 @@ export default function Home() {
       {/* ABOUT */}
       <section
         id="about"
-        className="min-h-screen bg-white text-black pt-20 pb-4 px-10"
+        className="min-h-screen px-10 pt-20 pb-4 text-black bg-white"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <div className="grid items-start grid-cols-1 gap-8 mx-auto max-w-7xl md:grid-cols-3">
           {/* Left — Big heading + subtitle */}
           <div className="flex flex-col justify-between h-full">
             <h2 className="text-8xl md:text-9xl font-black leading-none tracking-tight uppercase text-[#0E255E]">
@@ -114,7 +116,7 @@ export default function Home() {
               <p className="text-sm uppercase tracking-widest mb-4 text-[#0E255E]">
                 Innovative IT Solutions & Digital Transformation
               </p>
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-gray-700">
                 We deliver cutting-edge technology solutions designed to
                 streamline operations, enhance performance, and drive business
                 growth in a rapidly evolving digital world.
@@ -127,7 +129,7 @@ export default function Home() {
             <img
               src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800"
               alt="Interior Design"
-              className="w-full h-125 object-cover rounded-2xl"
+              className="object-cover w-full h-125 rounded-2xl"
             />
           </div>
 
@@ -136,13 +138,13 @@ export default function Home() {
             <img
               src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600"
               alt="Philosophy"
-              className="w-full h-48 object-cover rounded-2xl"
+              className="object-cover w-full h-48 rounded-2xl"
             />
             <div>
               <h3 className="text-2xl font-bold mb-3 text-[#0E255E]">
                 Our Philosophy
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-gray-600">
                 At WERLTEC, we believe technology should simplify complexity and
                 create meaningful impact. We focus on delivering smart,
                 scalable, and user-centric solutions that help businesses grow
@@ -154,8 +156,8 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="bg-white text-black pt-4 pb-16 px-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+      <section id="services" className="px-10 pt-4 pb-16 text-black bg-white">
+        <div className="grid items-start grid-cols-1 gap-16 mx-auto max-w-7xl md:grid-cols-2">
           {/* Left — heading, description, image */}
           <div>
             <h2 className="text-8xl md:text-9xl font-black leading-none tracking-tight uppercase mb-6 text-[#0E255E]">
@@ -163,7 +165,7 @@ export default function Home() {
               <br />
               SERVICES
             </h2>
-            <p className="text-gray-500 text-sm leading-relaxed mb-10 max-w-md">
+            <p className="max-w-md mb-10 text-sm leading-relaxed text-gray-500">
               At WERLTEC, we provide innovative and scalable IT solutions
               designed to help businesses grow, adapt, and succeed in a
               fast-changing digital landscape.
@@ -171,7 +173,7 @@ export default function Home() {
             <img
               src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=700"
               alt="IT Services"
-              className="w-full h-45 object-cover rounded-2xl"
+              className="object-cover w-full h-45 rounded-2xl"
             />
           </div>
 
@@ -196,10 +198,10 @@ export default function Home() {
               },
             ].map((service) => (
               <div key={service.title} className="py-8">
-                <h3 className="text-lg font-black uppercase tracking-widest mb-3">
+                <h3 className="mb-3 text-lg font-black tracking-widest uppercase">
                   {service.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed text-gray-500">
                   {service.desc}
                 </p>
               </div>
@@ -211,16 +213,16 @@ export default function Home() {
       {/* CAREERS */}
       <section
         id="careers"
-        className="bg-white text-black pt-24 pb-20 px-10 relative overflow-hidden"
+        className="relative px-10 pt-24 pb-20 overflow-hidden text-black bg-white"
       >
         {/* Gradient blob top-right */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-linear-to-bl from-blue-300 via-blue-100 to-transparent rounded-full opacity-60 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 rounded-full pointer-events-none w-80 h-80 bg-linear-to-bl from-blue-300 via-blue-100 to-transparent opacity-60 blur-3xl" />
 
-        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        <div className="relative z-10 grid items-start grid-cols-1 gap-16 mx-auto max-w-7xl md:grid-cols-2">
           {/* Left — big heading + badge + description */}
           <div className="flex flex-col gap-6">
             <div>
-              <span className="inline-block border border-black rounded-full px-4 py-1 text-sm mb-6">
+              <span className="inline-block px-4 py-1 mb-6 text-sm border border-black rounded-full">
                 We're hiring!
               </span>
               <h2 className="text-8xl md:text-9xl font-black leading-none tracking-tight uppercase text-[#0E255E]">
@@ -233,7 +235,7 @@ export default function Home() {
               <p className="text-sm text-[#0E255E] uppercase tracking-widest mb-4">
                 Be part of our mission
               </p>
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-gray-700">
                 We're looking for passionate people to join us on our mission.
                 We value flat hierarchies, clear communication, and full
                 ownership and responsibility.
@@ -293,10 +295,10 @@ export default function Home() {
                   className="flex items-start justify-between py-5 group"
                 >
                   <div>
-                    <h3 className="text-base font-bold mb-1">{job.title}</h3>
-                    <p className="text-gray-500 text-xs mb-3">{job.desc}</p>
+                    <h3 className="mb-1 text-base font-bold">{job.title}</h3>
+                    <p className="mb-3 text-xs text-gray-500">{job.desc}</p>
                     <div className="flex gap-2">
-                      <span className="flex items-center gap-1 border border-gray-400 rounded-full px-2 py-1 text-xs">
+                      <span className="flex items-center gap-1 px-2 py-1 text-xs border border-gray-400 rounded-full">
                         <svg
                           className="w-3 h-3"
                           fill="none"
@@ -318,7 +320,7 @@ export default function Home() {
                         </svg>
                         100% remote
                       </span>
-                      <span className="flex items-center gap-1 border border-gray-400 rounded-full px-2 py-1 text-xs">
+                      <span className="flex items-center gap-1 px-2 py-1 text-xs border border-gray-400 rounded-full">
                         <svg
                           className="w-3 h-3"
                           fill="none"
@@ -336,7 +338,7 @@ export default function Home() {
                       </span>
                     </div>
                   </div>
-                  <button className="text-sm font-bold whitespace-nowrap ml-4 mt-1 hover:underline">
+                  <button className="mt-1 ml-4 text-sm font-bold whitespace-nowrap hover:underline">
                     Apply ↗
                   </button>
                 </div>
@@ -346,12 +348,194 @@ export default function Home() {
         </div>
       </section>
 
+      {/* BLOG */}
+      <section id="blog" className="px-10 py-20 text-black bg-white">
+        <div className="mx-auto max-w-7xl">
+          {/* Heading */}
+          <div className="mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-black text-[#0E255E] mb-3">
+              From the WERLTEC Blog
+            </h2>
+            <p className="max-w-xl mx-auto text-sm text-gray-500">
+              Stay updated with expert insights, tech guides, and a little
+              digital inspiration.
+            </p>
+          </div>
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                image:
+                  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600",
+                category: "BEGINNER",
+                title: "5 Easy Steps to Start Your Digital Journey",
+                desc: "Just getting started with technology? Here are five beginner-friendly steps to build a strong digital foundation.",
+              },
+              {
+                image:
+                  "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600",
+                category: "CLOUD",
+                title: "Top 4 Cloud Platforms for Modern Businesses",
+                desc: "Did you know cloud computing can cut costs by 30%? Here are the most effective platforms for your business.",
+              },
+              {
+                image:
+                  "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600",
+                category: "DEV TIPS",
+                title: "Web Performance Basics for Developers",
+                desc: "Fast websites win users. Here are simple tips and tricks to help your web apps perform at their best.",
+              },
+              {
+                image:
+                  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600",
+                category: "MOBILE",
+                title: "Mobile Apps That Thrive on Any Device",
+                desc: "No fancy hardware? No problem. Here are apps built to run beautifully on any mobile device you own.",
+              },
+            ].map((post) => (
+              <div
+                key={post.title}
+                className="flex flex-col cursor-pointer group"
+              >
+                <div className="mb-4 overflow-hidden rounded-2xl">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="object-cover w-full h-48 transition-transform duration-500 rounded-2xl group-hover:scale-105"
+                  />
+                </div>
+                <p className="text-xs font-bold tracking-widest text-[#1F77B4] mb-2 uppercase">
+                  {post.category}
+                </p>
+                <h3 className="text-base font-black text-[#0E255E] mb-2 leading-snug">
+                  {post.title}
+                </h3>
+                <p className="flex-1 mb-4 text-xs leading-relaxed text-gray-500">
+                  {post.desc}
+                </p>
+                <a
+                  href="#"
+                  className="text-[#1F77B4] text-sm font-semibold hover:text-[#0E255E] transition"
+                >
+                  Read More →
+                </a>
+              </div>
+            ))}
+          </div>
+
+          {/* Explore More */}
+          <div className="flex justify-center mt-12">
+            <button className="border-2 border-[#0E255E] text-[#0E255E] px-10 py-3 rounded-full text-sm font-semibold hover:bg-[#0E255E] hover:text-white transition">
+              Explore More
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="px-10 py-20 text-black bg-gray-50">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-12 text-4xl font-black text-center text-[#0E255E] md:text-5xl">
+            Our Happy Clients Say It Best
+          </h2>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {[
+              {
+                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200",
+                stars: 5,
+                quote:
+                  '"Absolutely love working with WERLTEC! They built our platform from scratch, delivered on time, and the quality was outstanding. Definitely our go-to tech partner."',
+                name: "Sarah M.",
+                role: "CEO, StartupHub",
+              },
+              {
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
+                stars: 5,
+                quote:
+                  '"I found the perfect tech solutions for my business with WERLTEC. Their team is incredibly knowledgeable and the support has been exceptional every step of the way."',
+                name: "James K.",
+                role: "Founder, TechVentures",
+              },
+            ].map((t) => (
+              <div
+                key={t.name}
+                className="flex items-stretch gap-0 overflow-hidden bg-white border border-gray-100 shadow-sm rounded-2xl"
+              >
+                {/* Left image */}
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  className="object-cover w-36 shrink-0"
+                />
+                {/* Right content */}
+                <div className="flex flex-col justify-center px-6 py-6">
+                  {/* Stars */}
+                  <div className="flex gap-1 mb-3">
+                    {Array.from({ length: t.stars }).map((_, i) => (
+                      <svg
+                        key={i}
+                        className="w-4 h-4 text-yellow-400 fill-yellow-400"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="mb-4 text-sm italic leading-relaxed text-gray-600">
+                    {t.quote}
+                  </p>
+                  <div>
+                    <p className="text-sm font-bold text-[#0E255E]">{t.name}</p>
+                    <p className="text-xs text-gray-400">{t.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NEWSLETTER */}
+      <section
+        className="relative px-10 py-24 overflow-hidden text-white"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-[#0E255E]/80" />
+
+        <div className="relative z-10 mx-auto text-center max-w-2xl">
+          <h2 className="mb-3 text-3xl font-black md:text-4xl">
+            Get Tech Insights in Your Inbox
+          </h2>
+          <p className="mb-8 text-sm text-white/70">
+            Expert tips, industry news, and exclusive updates — delivered straight to you.
+          </p>
+          <div className="flex items-center gap-3 max-w-lg mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5">
+            <input
+              type="email"
+              placeholder="Enter your email..."
+              className="flex-1 bg-transparent text-sm text-white placeholder-white/50 outline-none py-2 px-2"
+            />
+            <button className="bg-white text-[#0E255E] font-semibold text-sm px-6 py-2 rounded-full hover:bg-[#1F77B4] hover:text-white transition whitespace-nowrap">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section
         id="contact"
-        className="bg-white text-black pt-8 pb-20 px-10 overflow-hidden"
+        className="px-10 pt-8 pb-20 overflow-hidden text-black bg-white"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto max-w-7xl">
           {/* Heading — one line, slides in from left */}
           <h2
             className="text-6xl md:text-8xl font-black leading-none tracking-tight uppercase mb-10 opacity-0 -translate-x-20 transition-all duration-700 ease-out text-[#0E255E]"
@@ -373,10 +557,10 @@ export default function Home() {
           </h2>
 
           {/* Two column layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <div className="grid items-start grid-cols-1 gap-16 md:grid-cols-2">
             {/* Left — image + description + contact info */}
             <div
-              className="flex flex-col gap-6 opacity-0 -translate-x-10 transition-all duration-700 delay-200 ease-out"
+              className="flex flex-col gap-6 transition-all duration-700 ease-out delay-200 -translate-x-10 opacity-0"
               ref={(el) => {
                 if (!el) return;
                 const obs = new IntersectionObserver(
@@ -396,7 +580,7 @@ export default function Home() {
                 alt="Contact"
                 className="w-full h-48 object-cover rounded-2xl border-4 border-[#1e7fc6]"
               />
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-gray-500">
                 Have a project in mind? We’d love to hear from you. Send us a
                 message and we’ll get back to you within 24 hours.
               </p>
@@ -421,7 +605,7 @@ export default function Home() {
 
             {/* Right — form */}
             <div
-              className="opacity-0 translate-x-10 transition-all duration-700 delay-300 ease-out"
+              className="transition-all duration-700 ease-out delay-300 translate-x-10 opacity-0"
               ref={(el) => {
                 if (!el) return;
                 const obs = new IntersectionObserver(
@@ -436,7 +620,7 @@ export default function Home() {
                 obs.observe(el);
               }}
             >
-              <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
+              <h3 className="mb-6 text-2xl font-bold">Send us a message</h3>
               <form className="flex flex-col gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   <input
@@ -472,24 +656,24 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="bg-[#0c1633] text-white px-10 pt-20 pb-10">
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto max-w-7xl">
           {/* Top — big marquee brand name */}
-          <div className="overflow-hidden border-b border-white/10 pb-10 mb-12">
+          <div className="pb-10 mb-12 overflow-hidden border-b border-white/10">
             <p className="text-[10rem] font-black leading-none tracking-tighter uppercase whitespace-nowrap opacity-10 select-none">
               WERLTEC
             </p>
           </div>
 
           {/* Middle — 4 columns */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+          <div className="grid grid-cols-2 gap-10 mb-16 md:grid-cols-4">
             {/* Brand */}
             <div>
               <img
                 src={Logo}
                 alt="WERLTEC"
-                className="h-12 object-contain mb-4"
+                className="object-contain h-12 mb-4"
               />
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-gray-400">
                 We build modern digital experiences with cutting-edge technology
                 and bold design.
               </p>
@@ -501,18 +685,23 @@ export default function Home() {
                 Navigation
               </h4>
               <ul className="flex flex-col gap-3">
-                {["Home", "About", "Services", "Careers", "Contact"].map(
-                  (item) => (
-                    <li key={item}>
-                      <a
-                        href={`#${item.toLowerCase()}`}
-                        className="text-sm text-gray-400 hover:text-white transition"
-                      >
-                        {item}
-                      </a>
-                    </li>
-                  ),
-                )}
+                {[
+                  "Home",
+                  "About",
+                  "Services",
+                  "Careers",
+                  "Blog",
+                  "Contact",
+                ].map((item) => (
+                  <li key={item}>
+                    <a
+                      href={`#${item.toLowerCase()}`}
+                      className="text-sm text-gray-400 transition hover:text-white"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -565,7 +754,7 @@ export default function Home() {
                   <a
                     key={label}
                     href="#"
-                    className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:border-white hover:bg-white hover:text-black transition"
+                    className="flex items-center justify-center transition border rounded-full w-9 h-9 border-white/20 hover:border-white hover:bg-white hover:text-black"
                   >
                     <svg
                       className="w-4 h-4"
@@ -587,8 +776,8 @@ export default function Home() {
           </div>
 
           {/* Bottom bar */}
-          <div className="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-8 gap-4">
-            <p className="text-gray-500 text-xs">
+          <div className="flex flex-col items-center justify-between gap-4 pt-8 border-t md:flex-row border-white/10">
+            <p className="text-xs text-gray-500">
               © {new Date().getFullYear()} WERLTEC. All rights reserved.
             </p>
             <div className="flex gap-6">
@@ -597,7 +786,7 @@ export default function Home() {
                   <a
                     key={item}
                     href="#"
-                    className="text-gray-500 text-xs hover:text-white transition"
+                    className="text-xs text-gray-500 transition hover:text-white"
                   >
                     {item}
                   </a>
